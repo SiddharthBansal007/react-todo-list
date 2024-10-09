@@ -1,27 +1,133 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "SUSE", sans-serif;
+  background-color: white; /* Changed to white */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(to bottom, #f0f0f0 0%, #e0e0e0 100%); /* Light gray gradient */
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+#main {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  height: auto;
+  background-color: white; /* White background for the main container */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: Add a slight shadow for depth */
+}
+
+#main h1 {
+  margin-bottom: 20px;
+  font-size: 40px;
+  color: black; /* Black text color */
+}
+
+#add-task form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+#add-task input {
+  font-size: 20px;
+  height: 50px;
+  width: 86%;
+  padding: 10px;
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 5px;
+  color: black; /* Black text color */
+}
+
+#add {
+  font-size: 20px;
+  color: white;
+  height: 50px;
+  width: 13%;
+  background-color: #4CAF50; /* Green background for the add button */
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+#add-task button:hover {
+  filter: brightness(85%);
+}
+
+#show-task {
+  display: flex;
+  flex-direction: column;
+  max-height: 225px;
+  overflow-y: auto;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+#show-task::-webkit-scrollbar {
+  display: none;
+}
+
+.task {
+  background-color: #f9f9f9; /* Light gray background for tasks */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+  height: 50px;
+  padding: 10px 0px 10px 10px;
+  border-radius: 5px;
+  color: black; /* Black text color */
+}
+
+#del {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.task:hover #del {
+  opacity: 1;
+  pointer-events: auto;
+  font-size: 20px;
+  color: white;
+  height: 50px;
+  width: 13%;
+  background-color: red; /* Red background for delete button */
+  border-radius: 5px;
+  border: none;
+}
+
+#bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#bottom button {
+  color: white;
+  background-color: #4CAF50; /* Green background for clear button */
+  font-size: 20px;
+  height: 45px;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#bottom button:hover {
+  filter: brightness(85%);
+}
+
+#bottom p {
+  font-size: 20px;
+  color: black; /* Black text color */
 }
